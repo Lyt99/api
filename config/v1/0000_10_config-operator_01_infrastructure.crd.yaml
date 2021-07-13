@@ -93,7 +93,7 @@ spec:
                       description: Ovirt contains settings specific to the oVirt infrastructure provider.
                       type: object
                     type:
-                      description: type is the underlying infrastructure provider for the cluster. This value controls whether infrastructure automation such as service load balancers, dynamic volume provisioning, machine creation and deletion, and other integrations are enabled. If None, no infrastructure automation is enabled. Allowed values are "AWS", "Azure", "BareMetal", "GCP", "Libvirt", "OpenStack", "VSphere", "oVirt", "KubeVirt", "EquinixMetal", and "None". Individual components may not support all platforms, and must handle unrecognized platforms as None if they do not support that platform.
+                      description: type is the underlying infrastructure provider for the cluster. This value controls whether infrastructure automation such as service load balancers, dynamic volume provisioning, machine creation and deletion, and other integrations are enabled. If None, no infrastructure automation is enabled. Allowed values are "AWS", "Azure", "BareMetal", "GCP", "Libvirt", "OpenStack", "VSphere", "oVirt", "KubeVirt", "EquinixMetal", "AlibabaCloud", and "None". Individual components may not support all platforms, and must handle unrecognized platforms as None if they do not support that platform.
                       type: string
                       enum:
                         - ""
@@ -109,6 +109,7 @@ spec:
                         - IBMCloud
                         - KubeVirt
                         - EquinixMetal
+                        - AlibabaCloud
                     vsphere:
                       description: VSphere contains settings specific to the VSphere infrastructure provider.
                       type: object
@@ -160,6 +161,7 @@ spec:
                     - IBMCloud
                     - KubeVirt
                     - EquinixMetal
+                    - AlibabaCloud
                 platformStatus:
                   description: platformStatus holds status information specific to the underlying infrastructure provider.
                   type: object
@@ -337,6 +339,7 @@ spec:
                         - IBMCloud
                         - KubeVirt
                         - EquinixMetal
+                        - AlibabaCloud
                     vsphere:
                       description: VSphere contains settings specific to the VSphere infrastructure provider.
                       type: object

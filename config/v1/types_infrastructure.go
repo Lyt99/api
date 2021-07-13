@@ -121,7 +121,7 @@ const (
 )
 
 // PlatformType is a specific supported infrastructure provider.
-// +kubebuilder:validation:Enum="";AWS;Azure;BareMetal;GCP;Libvirt;OpenStack;None;VSphere;oVirt;IBMCloud;KubeVirt;EquinixMetal
+// +kubebuilder:validation:Enum="";AWS;Azure;BareMetal;GCP;Libvirt;OpenStack;None;VSphere;oVirt;IBMCloud;KubeVirt;EquinixMetal;AlibabaCloud
 type PlatformType string
 
 const (
@@ -160,6 +160,9 @@ const (
 
 	// EquinixMetalPlatformType represents Equinix Metal infrastructure.
 	EquinixMetalPlatformType PlatformType = "EquinixMetal"
+
+	// AlibabaCloudPlatformType represents Alibaba Cloud infrastructure
+	AlibabaCloudPlatformType PlatformType = "AlibabaCloud"
 )
 
 // IBMCloudProviderType is a specific supported IBM Cloud provider cluster type
@@ -182,7 +185,7 @@ type PlatformSpec struct {
 	// balancers, dynamic volume provisioning, machine creation and deletion, and
 	// other integrations are enabled. If None, no infrastructure automation is
 	// enabled. Allowed values are "AWS", "Azure", "BareMetal", "GCP", "Libvirt",
-	// "OpenStack", "VSphere", "oVirt", "KubeVirt", "EquinixMetal", and "None". Individual components may not support
+	// "OpenStack", "VSphere", "oVirt", "KubeVirt", "EquinixMetal", "AlibabaCloud", and "None". Individual components may not support
 	// all platforms, and must handle unrecognized platforms as None if they do
 	// not support that platform.
 	//
